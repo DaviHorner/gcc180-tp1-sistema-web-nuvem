@@ -1,4 +1,5 @@
 // create an express app
+/*
 const express = require("express");
 const bodyParser= require('body-parser')
 const app = express();
@@ -21,8 +22,15 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }))
 
 
+
+// Read
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
+    db.collection('notas').find().toArray()
+    .then(results => { 
+        console.log(results)
+    })
+    .catch(error => console.error(error))
+    
 })
 
 app.post('/nota', (req, res) => {
@@ -36,3 +44,4 @@ app.post('/nota', (req, res) => {
 // start the server listening for requests
 app.listen(process.env.PORT || 3000, 
 	() => console.log("Server is running..."));
+*/
