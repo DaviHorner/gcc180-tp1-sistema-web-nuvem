@@ -7,7 +7,7 @@ const { MongoClient } = require("mongodb");
 const uri = process.env.MONGODB_URI;
 
 app.get('/', (req, res) => {
-    res.send('Hello World')
+    res.sendFile(__dirname + '/index.html')
 })
 
 // start the server listening for requests
